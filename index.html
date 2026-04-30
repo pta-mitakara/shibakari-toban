@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>保育園芝刈り当番確認ページ</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+    h2 {
+      background: #4CAF50;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .box {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      min-width: 500px;
+    }
+    th {
+      background: #d9f7be; /* 薄いライムグリーン */
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+      white-space: nowrap;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 15px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    ul {
+      margin-top: 0;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+    }
+    #inputId {
+      font-size: 20px;
+      padding: 10px;
+      width: 150px;
+    }
+    #result {
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: 1.6;
+    }
+    .result-date {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    }
+    .off {
+    background: #f0f0f0;
+    color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>芝刈り当番確認ページ</h2>
+
+  <div class="box">
+    <h3>注意事項</h3>
+    <ul>
+      <li>雨の場合は基本的に中止となります。</li>
+      <li>中止の場合、振替日は園から別途ご連絡します。</li>
+      <li>IDは保護者ごとに配布されたものをご使用ください。</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>IDで当番を確認</h3>
+    <p>IDを入力してください。</p>
+    <input type="text" id="inputId" placeholder="例：S01" oninput="normalizeInput()" autocomplete="off" list="idlist">
+    <datalist id="idlist"></datalist>
+    <button onclick="search()" style="font-size:18px; padding:10px 15px;">検索</button>
+
+    <h4>結果</h4>
+    <div id="result"></div>
+  </div>
+
+  <div class="box">
+    <h3>全体スケジュール（ID表記）</h3>
+    <div id="allSchedule"></div>
+  </div>
+
+  <script src="script.js?v=10"></script>
+</body>
+</html>
