@@ -1,6 +1,6 @@
 // 固定の開催時間（朝9時〜10時）
-const START_TIME = "09:00";
-const END_TIME = "10:00";
+const START_TIME = "08:00";
+const END_TIME = "09:00";
 
 // CSVを読み込んで配列に変換
 async function loadCSV() {
